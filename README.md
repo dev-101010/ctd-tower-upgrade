@@ -1,4 +1,4 @@
-# ctd-tower-upgrade
+# CTD Tower Upgrade
 
 Installiere in deinem Browser die [Tampermonkey](https://www.tampermonkey.net/index.php) extension.
 
