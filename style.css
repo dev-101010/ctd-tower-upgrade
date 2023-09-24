@@ -15,8 +15,7 @@
 
 .ctdUpgradeSelectors {
   display: inline-grid;
-  grid-template-columns: repeat(2, 200px);
-  border: 1px solid black;
+  grid-template-columns: repeat(2, 120px);
   grid-gap: 1px;
 }
 
