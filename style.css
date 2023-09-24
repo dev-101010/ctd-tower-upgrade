@@ -1,3 +1,8 @@
+.ctdUpgrade {
+    display: flex;
+    align-items: center;
+}
+
 .ctdUpgradeToDos {
   display: inline-grid;
   grid-template-columns: repeat(10, 16px);
