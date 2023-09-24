@@ -1,4 +1,4 @@
-.ctdUpgradeGrids {
+.ctdUpgradeToDos {
   display: inline-grid;
   grid-template-columns: repeat(10, 16px);
   border: 1px solid black;
@@ -6,7 +6,7 @@
   background-color: black;
 }
 
-.ctdUpgradeGrids > div {
+.ctdUpgradeToDos > div {
   background-color: white;
   text-align: center;
   height: 16px;
@@ -21,7 +21,7 @@
   background-color: black;
 }
 
-.ctdUpgradeGrids > div {
+.ctdUpgradeSelectors > div {
   background-color: white;
   text-align: center;
   height: 24px;
