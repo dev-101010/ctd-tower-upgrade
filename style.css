@@ -21,6 +21,7 @@
 
 .ctdUpgradeSelectors > div {
   text-align: center;
+  border: 1px solid black;
   height: 16px;
   width: 120px;
 }
