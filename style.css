@@ -18,12 +18,10 @@
   grid-template-columns: repeat(2, 200px);
   border: 1px solid black;
   grid-gap: 1px;
-  background-color: black;
 }
 
 .ctdUpgradeSelectors > div {
-  background-color: white;
   text-align: center;
-  height: 24px;
-  width: 200px;
+  height: 16px;
+  width: 120px;
 }
