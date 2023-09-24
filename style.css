@@ -20,3 +20,10 @@
   grid-gap: 1px;
   background-color: black;
 }
+
+.ctdUpgradeGrids > div {
+  background-color: white;
+  text-align: center;
+  height: 24px;
+  width: 200px;
+}
