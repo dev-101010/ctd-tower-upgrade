@@ -9,4 +9,6 @@
 .ctdUpgradeGrids > div {
   background-color: white;
   text-align: center;
+  height: 16px;
+  width: 16px;
 }
