@@ -1,11 +1,12 @@
 .ctdUpgradeGrid {
-    display: flex;
+  display: inline-grid;
+  grid-template-columns: 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px;
+  border: 1px solid black;
+  grid-gap: 1px;
+  background-color: black;
 }
 
-.ctdUpgradeColumn {
-    flex: 0;
-}
-
-.ctdUpgradeCell {
-    height: 16px; width: 16px; border-style: solid; border-color: black;
+.ctdUpgradeGrid > div {
+  background-color: white;
+  text-align: center;
 }
