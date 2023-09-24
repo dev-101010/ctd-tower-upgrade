@@ -1,6 +1,6 @@
 .ctdUpgradeGrids {
   display: inline-grid;
-  grid-template-columns: 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px;
+  grid-template-columns: repeat(10, 16px);
   border: 1px solid black;
   grid-gap: 1px;
   background-color: black;
