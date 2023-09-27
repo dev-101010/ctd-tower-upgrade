@@ -2,7 +2,7 @@
     display: flex;
     align-items: start;
     flex-direction: column;
-    display: inline-block;
+    display: center;
 }
 
 .ctdUpgradeToDos {
@@ -32,4 +32,5 @@
   height: 28px;
   width: 140px;
   color: black;
+  font-size: 0.8rem
 }
