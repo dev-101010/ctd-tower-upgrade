@@ -19,8 +19,8 @@ GM_addStyle (GM_getResourceText("STYLE1"));
     const ctdUpgrade = {
         colors:["#FF0000","#0000FF","#008000","#FFFF00","#ff8400","#91048d","#7FFFD4","#848484"],
         gameRunning:false,
-        run:false,
-        random:false,
+        run:null,
+        random:null,
         lvlUpPoints:0,
         lvlUpNeededPoints:5,
         buttons:[],
@@ -30,8 +30,6 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         currentSelected:-1,
         reset: function () {
             this.gameRunning = true;
-            this.run = null;
-            this.random = null;
             this.lvlUpPoints=0;
             this.lvlUpNeededPoints=5;
             this.currentSelected=-1;
@@ -44,6 +42,8 @@ GM_addStyle (GM_getResourceText("STYLE1"));
                 selector.style.display = 'none';
                 selector.style.border = "1px solid black";
             }
+            if(this.random) this.random.checked = false;
+            if(this.random) this.random.checked = false;
         },
     };
 
