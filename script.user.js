@@ -159,7 +159,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         const cardBody = gameContainerUpgrade.getElementsByClassName("card-body")[0];
         if(!cardBody) return;
 
-        ctdUpgrade.createGrid(gameContainerOffline);//gameContainerTowerConfig
+        ctdUpgrade.createGrid(gameContainerTowerConfig);
 
         ctdUpgrade.reset();
 
