@@ -41,4 +41,7 @@
     margin-right: auto;
 }
 
-.ctdUpgradeOptions > label { display: inline-block; }
+.ctdUpgradeOptions > label {
+    display: inline-block;
+    padding: 5px 20px 5px 20px;
+}
