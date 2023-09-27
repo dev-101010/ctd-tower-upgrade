@@ -2,11 +2,12 @@
     display: flex;
     align-items: start;
     flex-direction: column;
+    display: inline-block;
 }
 
 .ctdUpgradeToDos {
   display: inline-grid;
-  grid-template-columns: repeat(10, 16px);
+  grid-template-columns: repeat(10, 24px);
   border: 1px solid black;
   grid-gap: 1px;
   background-color: black;
@@ -15,8 +16,8 @@
 .ctdUpgradeToDos > div {
   background-color: white;
   text-align: center;
-  height: 16px;
-  width: 16px;
+  height: 24px;
+  width: 24px;
 }
 
 .ctdUpgradeSelectors {
