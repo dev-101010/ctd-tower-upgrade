@@ -42,7 +42,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
                 selector.style.display = 'none';
                 selector.style.border = "1px solid black";
             }
-            if(this.random) this.random.checked = false;
+            if(this.run) this.run.checked = false;
             if(this.random) this.random.checked = false;
         },
     };
