@@ -31,5 +31,5 @@
   height: 28px;
   width: 140px;
   color: black;
-  font-size: 8px;
+  text-size-adjust: auto;
 }
