@@ -21,13 +21,15 @@
 
 .ctdUpgradeSelectors {
   display: inline-grid;
-  grid-template-columns: repeat(2, 120px);
+  grid-template-columns: repeat(2, 160px);
   grid-gap: 1px;
 }
 
 .ctdUpgradeSelectors > div {
   text-align: center;
   border: 1px solid black;
-  height: 16px;
-  width: 120px;
+  height: 32px;
+  width: 160px;
+  color: black;
+  font-size: 20px;
 }
