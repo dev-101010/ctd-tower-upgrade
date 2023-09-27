@@ -19,6 +19,8 @@ GM_addStyle (GM_getResourceText("STYLE1"));
     const ctdUpgrade = {
         colors:["#FF0000","#0000FF","#008000","#FFFF00","#ff8400","#91048d","#7FFFD4","#848484"],
         gameRunning:false,
+        run:false,
+        random:false,
         lvlUpPoints:0,
         lvlUpNeededPoints:5,
         buttons:[],
@@ -28,13 +30,19 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         currentSelected:-1,
         reset: function () {
             this.gameRunning = true;
+            this.run = false;
+            this.random = false;
             this.lvlUpPoints=0;
             this.lvlUpNeededPoints=5;
             this.currentSelected=-1;
             this.buttons=[];
             this.toDo=[];
+            for(const cell of this.cells) {
+                cell.style.backgroundColor = "#FFFFFF";
+            }
             for(const selector of this.selectors) {
                 selector.style.display = 'none';
+                selector.style.border = "1px solid black";
             }
         },
     };
@@ -57,6 +65,32 @@ GM_addStyle (GM_getResourceText("STYLE1"));
     ctdUpgrade.createGrid = (parent) => {
         const main = document.createElement('div');
         main.className = 'ctdUpgrade';
+
+        const options = document.createElement('div');
+        options.className = 'ctdUpgradeOptions';
+
+        const run_label = document.createElement("label");
+        const run = document.createElement("INPUT");
+        run.setAttribute("type", "checkbox");
+        run.addEventListener('change', (event) => {
+            ctdUpgrade.run = event.currentTarget.checked;
+        });
+        run_label.appendChild(run);
+        run_label.appendChild( document.createTextNode("run") );
+
+        const random_label = document.createElement("label");
+        const random = document.createElement("INPUT");
+        random.setAttribute("type", "checkbox");
+        random.addEventListener('change', (event) => {
+            ctdUpgrade.random = event.currentTarget.checked;
+        });
+        random_label.appendChild(random);
+        random_label.appendChild( document.createTextNode("random") );
+
+        options.appendChild(run_label);
+        options.appendChild(random_label);
+
+        main.appendChild(options);
 
         const selectors = document.createElement('div');
         selectors.className = 'ctdUpgradeSelectors';
@@ -93,6 +127,14 @@ GM_addStyle (GM_getResourceText("STYLE1"));
     };
 
     ctdUpgrade.pointsChanged = () => {
+        if(ctdUpgrade.lvlUpPoints <= 0 || ctdUpgrade.lvlUpPoints < ctdUpgrade.lvlUpNeededPoints || !ctdUpgrade.run) return;
+        if(ctdUpgrade.random) {
+            const button = ctdUpgrade.buttons[Math.floor(Math.random() * ctdUpgrade.buttons.length)];
+            if(!button) return;
+            button.click();
+            console.log(button.id);
+            return;
+        }
         const upgrade = ctdUpgrade.toDo.shift();
         let lastCell = null;
         let count = 0;
@@ -123,7 +165,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         const cardBody = gameContainerUpgrade.getElementsByClassName("card-body")[0];
         if(!cardBody) return;
 
-        ctdUpgrade.createGrid(gameContainerTowerConfig);
+        ctdUpgrade.createGrid(gameContainerOffline);//gameContainerTowerConfig
 
         ctdUpgrade.reset();
 
@@ -167,8 +209,6 @@ GM_addStyle (GM_getResourceText("STYLE1"));
             const [lup,lunp] = text.split(' / ');
             if(parseInt(lup) == ctdUpgrade.lvlUpPoints) return;
             [ctdUpgrade.lvlUpPoints,ctdUpgrade.lvlUpNeededPoints] = [parseInt(lup),parseInt(lunp)];
-            if(parseInt(ctdUpgrade.lvlUpPoints) <= 0 || parseInt(ctdUpgrade.lvlUpPoints) < parseInt(ctdUpgrade.lvlUpNeededPoints)) return;
-            ctdUpgrade.pointsChanged();
         }
 
         const config = { attributes: true, childList: true, subtree: true };
@@ -178,6 +218,8 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         new MutationObserver(cardBodyCallback).observe(cardBody, config);
 
         new MutationObserver(gameContainerOfflineCallback).observe(gameContainerOffline, config);
+
+        setInterval(ctdUpgrade.pointsChanged, 1000);
     });
 
 })();
