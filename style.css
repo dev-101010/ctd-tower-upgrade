@@ -36,9 +36,7 @@
 }
 
 .ctdUpgradeOptions {
-  display: inline-grid;
-  grid-template-columns: repeat(2, 140px);
-  grid-gap: 1px;
+
 }
 
 .ctdUpgradeOptions > label { display: block; }
