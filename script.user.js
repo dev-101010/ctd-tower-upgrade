@@ -149,7 +149,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
                 const selector = ctdUpgrade.selectors[ctdUpgrade.buttons.length];
                 if(selector){
                     selector.style.display = '';
-                    selector.innerHTML = text; //"<span STYLE='font-size:12px'>"+text+"</span>"
+                    selector.innerHTML = text;
                 }
                 ctdUpgrade.buttons.push(element);
             }
