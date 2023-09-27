@@ -41,4 +41,4 @@
     margin-right: auto;
 }
 
-.ctdUpgradeOptions > label { display: block; }
+.ctdUpgradeOptions > label { display: inline-block; }
