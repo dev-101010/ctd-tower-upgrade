@@ -121,8 +121,8 @@ GM_addStyle (GM_getResourceText("STYLE1"));
     };
 
     ctdUpgrade.pointsChanged = () => {
-        if(ctdUpgrade.lvlUpPoints <= 0 || ctdUpgrade.lvlUpPoints < ctdUpgrade.lvlUpNeededPoints || !ctdUpgrade.run) return;
-        if(ctdUpgrade.random) {
+        if(ctdUpgrade.lvlUpPoints <= 0 || ctdUpgrade.lvlUpPoints < ctdUpgrade.lvlUpNeededPoints || !ctdUpgrade.run.checked) return;
+        if(ctdUpgrade.random.checked) {
             const button = ctdUpgrade.buttons[Math.floor(Math.random() * ctdUpgrade.buttons.length)];
             if(!button) return;
             button.click();
