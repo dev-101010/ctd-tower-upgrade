@@ -30,8 +30,8 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         currentSelected:-1,
         reset: function () {
             this.gameRunning = true;
-            this.run = false;
-            this.random = false;
+            this.run = null;
+            this.random = null;
             this.lvlUpPoints=0;
             this.lvlUpNeededPoints=5;
             this.currentSelected=-1;
@@ -70,21 +70,15 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         options.className = 'ctdUpgradeOptions';
 
         const run_label = document.createElement("label");
-        const run = document.createElement("INPUT");
-        run.setAttribute("type", "checkbox");
-        run.addEventListener('change', (event) => {
-            ctdUpgrade.run = event.currentTarget.checked;
-        });
-        run_label.appendChild(run);
+        ctdUpgrade.run = document.createElement("INPUT");
+        ctdUpgrade.run.setAttribute("type", "checkbox");
+        run_label.appendChild(ctdUpgrade.run);
         run_label.appendChild( document.createTextNode("run") );
 
         const random_label = document.createElement("label");
-        const random = document.createElement("INPUT");
-        random.setAttribute("type", "checkbox");
-        random.addEventListener('change', (event) => {
-            ctdUpgrade.random = event.currentTarget.checked;
-        });
-        random_label.appendChild(random);
+        ctdUpgrade.random = document.createElement("INPUT");
+        ctdUpgrade.random.setAttribute("type", "checkbox");
+        random_label.appendChild(ctdUpgrade.random);
         random_label.appendChild( document.createTextNode("random") );
 
         options.appendChild(run_label);
