@@ -107,7 +107,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
 
         const grid = document.createElement('div');
         grid.className = 'ctdUpgradeToDos';
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 30; i++) {
             const cell = document.createElement('div');
             cell.id = "ctdUpgradeToDos_"+i;
             cell.addEventListener("mousedown", ctdUpgrade.ctdUpgradeToDosChange);
