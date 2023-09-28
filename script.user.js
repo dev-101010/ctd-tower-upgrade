@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CTD Upgrade
 // @namespace    https://github.com/dev-101010/ctd-tower-upgrade
-// @version      0.5
+// @version      0.51
 // @description  CTD Tower upgrade
 // @author       dev-101010
 // @match        https://www.c-td.de/*
