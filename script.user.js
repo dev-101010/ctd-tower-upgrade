@@ -23,11 +23,11 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         random:null,
         lvlUpPoints:0,
         lvlUpNeededPoints:5,
-        buttons:[],
-        selectors:[],
-        cells:[],
-        toDo:[],
         currentSelected:-1,
+        buttons:[],
+        toDo:[],
+        cells:[],
+        selectors:[],
         reset: function () {
             this.gameRunning = false;
             this.lvlUpPoints=0;
