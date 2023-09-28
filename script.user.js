@@ -29,7 +29,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         toDo:[],
         currentSelected:-1,
         reset: function () {
-            this.gameRunning = true;
+            this.gameRunning = false;
             this.lvlUpPoints=0;
             this.lvlUpNeededPoints=5;
             this.currentSelected=-1;
