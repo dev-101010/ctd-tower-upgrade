@@ -20,7 +20,6 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         colors:["#FF0000","#0000FF","#008000","#FFFF00","#ff8400","#91048d","#7FFFD4","#848484"],
         gameRunning:false,
         run:null,
-        random:null,
         lvlUpPoints:0,
         lvlUpNeededPoints:5,
         currentSelected:-1,
@@ -62,6 +61,17 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         }
     }
 
+    ctdUpgrade.randomClick = (event) => {
+        const count = ctdUpgrade.cells;
+        for (let i = 0; i < count; i++) {
+            const index = Math.floor(Math.random() * ctdUpgrade.buttons.length);
+            const button = ctdUpgrade.buttons[index];
+            if(!button) return;
+            ctdUpgrade.toDo[i] = button.id;
+            ctdUpgrade.cells[i].style.backgroundColor = ctdUpgrade.colors[index];
+        }
+    }
+
     ctdUpgrade.createGrid = (parent) => {
         const main = document.createElement('div');
         main.className = 'ctdUpgrade';
@@ -75,11 +85,10 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         run_label.appendChild(ctdUpgrade.run);
         run_label.appendChild( document.createTextNode("run") );
 
-        const random_label = document.createElement("label");
-        ctdUpgrade.random = document.createElement("INPUT");
-        ctdUpgrade.random.setAttribute("type", "checkbox");
-        random_label.appendChild(ctdUpgrade.random);
-        random_label.appendChild( document.createTextNode("random") );
+        const random = document.createElement("input");
+        button.type = "button";
+        button.value = "random";
+        button.onclick = ctdUpgrade.randomClick;
 
         options.appendChild(run_label);
         options.appendChild(random_label);
@@ -107,7 +116,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
 
         const grid = document.createElement('div');
         grid.className = 'ctdUpgradeToDos';
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 20; i++) {
             const cell = document.createElement('div');
             cell.id = "ctdUpgradeToDos_"+i;
             cell.addEventListener("mousedown", ctdUpgrade.ctdUpgradeToDosChange);
@@ -122,13 +131,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
 
     ctdUpgrade.pointsChanged = () => {
         if(ctdUpgrade.lvlUpPoints <= 0 || ctdUpgrade.lvlUpPoints < ctdUpgrade.lvlUpNeededPoints || !ctdUpgrade.run.checked) return;
-        if(ctdUpgrade.random.checked) {
-            const button = ctdUpgrade.buttons[Math.floor(Math.random() * ctdUpgrade.buttons.length)];
-            if(!button) return;
-            button.click();
-            console.log(button.id);
-            return;
-        }
+        
         const upgrade = ctdUpgrade.toDo.shift();
         let lastCell = null;
         let count = 0;
