@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CTD Upgrade
 // @namespace    https://github.com/dev-101010/ctd-tower-upgrade
-// @version      0.51
+// @version      0.52
 // @description  CTD Tower upgrade
 // @author       dev-101010
 // @match        https://www.c-td.de/*
@@ -62,12 +62,13 @@ GM_addStyle (GM_getResourceText("STYLE1"));
     }
 
     ctdUpgrade.randomClick = (event) => {
-        const count = ctdUpgrade.cells;
+
+        const count = ctdUpgrade.cells.length;
         for (let i = 0; i < count; i++) {
             const index = Math.floor(Math.random() * ctdUpgrade.buttons.length);
             const button = ctdUpgrade.buttons[index];
             if(!button) return;
-            ctdUpgrade.toDo[i] = button.id;
+            ctdUpgrade.toDo[i] = button;
             ctdUpgrade.cells[i].style.backgroundColor = ctdUpgrade.colors[index];
         }
     }
@@ -86,12 +87,12 @@ GM_addStyle (GM_getResourceText("STYLE1"));
         run_label.appendChild( document.createTextNode("run") );
 
         const random = document.createElement("input");
-        button.type = "button";
-        button.value = "random";
-        button.onclick = ctdUpgrade.randomClick;
+        random.type = "button";
+        random.value = "random";
+        random.onclick = ctdUpgrade.randomClick;
 
         options.appendChild(run_label);
-        options.appendChild(random_label);
+        options.appendChild(random);
 
         main.appendChild(options);
 
