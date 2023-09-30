@@ -3,6 +3,7 @@
     align-items: start;
     flex-direction: column;
     width: 100%;
+    grid-gap: 1px;
 }
 
 .ctdUpgradeToDos {
