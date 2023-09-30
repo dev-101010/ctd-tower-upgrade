@@ -36,7 +36,8 @@
   height: 28px;
   width: 140px;
   color: black;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   font-size: 0.7rem
 }
 
