@@ -31,13 +31,16 @@
 }
 
 .ctdUpgradeSelectors > div {
-  text-align: center;
+  display: flex;
   border: 1px solid black;
   height: 28px;
   width: 140px;
   color: black;
   font-weight: bold;
   font-size: 0.7rem
+  align-items:center;
+  justify-content:center;
+  margin: auto;
 }
 
 .ctdUpgradeOptions {
