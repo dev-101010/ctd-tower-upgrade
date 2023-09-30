@@ -4,4 +4,4 @@ Installiere in deinem Browser die [Tampermonkey](https://www.tampermonkey.net/in
 
 Lade die Datei "script.user.js" in Tampermonkey. (Oder: [Direct Download Link](https://github.com/dev-101010/ctd-tower-upgrade/raw/main/script.user.js))
 
-# Bitte nur nutzen wenn man aktiv im Stream ist, damit der Entwickler weiterhin Geld für die Weiterentwicklung des Games bekommt!
+# Bitte nur nutzen wenn man weiterhin aktiv im Stream ist, damit der Entwickler weiterhin Geld für die Weiterentwicklung des Games bekommt!
