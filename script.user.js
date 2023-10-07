@@ -217,7 +217,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
 
         new MutationObserver(gameContainerOfflineCallback).observe(gameContainerOffline, config);
 
-        setInterval(ctdUpgrade.pointsChanged, 1000);
+        setInterval(ctdUpgrade.pointsChanged, 2000);
     });
 
 })();
