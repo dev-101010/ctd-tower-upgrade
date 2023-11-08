@@ -152,7 +152,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
 
     window.addEventListener("load", () => {
 
-        const gameContainerTowerConfig = document.getElementById("gameContainerTowerConfig");
+        const gameContainerTowerConfig = document.getElementById("gameContainerUpgrade");
         if(!gameContainerTowerConfig) return;
         const gameContainerUpgrade = document.getElementById("gameContainerUpgrade");
         if(!gameContainerUpgrade) return;
