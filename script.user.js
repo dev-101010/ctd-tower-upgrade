@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CTD Upgrade
 // @namespace    https://github.com/dev-101010/ctd-tower-upgrade
-// @version      0.53
+// @version      0.55
 // @description  CTD Tower upgrade
 // @author       dev-101010
 // @match        https://www.c-td.de/*
@@ -152,7 +152,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
 
     window.addEventListener("load", () => {
 
-        const gameContainerTowerConfig = document.getElementById("gameContainerTowerConfig");
+        const gameContainerTowerConfig = document.getElementById("gameContainerUpgrade");
         if(!gameContainerTowerConfig) return;
         const gameContainerUpgrade = document.getElementById("gameContainerUpgrade");
         if(!gameContainerUpgrade) return;
@@ -184,7 +184,7 @@ GM_addStyle (GM_getResourceText("STYLE1"));
             for (const element of buttonList) {
                 if(element.style.display === 'none') continue;
                 if(ctdUpgrade.buttons.includes(element)) continue;
-                const nameElem = element.getElementsByClassName("uname")[0];
+                const nameElem = element.children[0].children[0];
                 const text = nameElem ? nameElem.innerText : "Unknown";
                 const selector = ctdUpgrade.selectors[ctdUpgrade.buttons.length];
                 if(selector){
